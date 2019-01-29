@@ -46,17 +46,17 @@ public class MeshGenerator : MonoBehaviour
         // 面の設定
         int[] triangles = {
             0, 2, 1, //face front
-			0, 3, 2,
+            0, 3, 2,
             5, 4, 7, //face back
-			5, 7, 6,
+            5, 7, 6,
             8, 10, 9, //face top
-			8, 11, 10,
+            8, 11, 10,
             12, 14, 13, //face bottom
-			12, 15, 14,
+            12, 15, 14,
             16, 18, 17, //face right
-			16, 19, 18,
+            16, 19, 18,
             20, 22, 21, //face left
-			20, 23, 22,
+            20, 23, 22,
         };
 
         Mesh mesh = GetComponent<MeshFilter>().mesh;
