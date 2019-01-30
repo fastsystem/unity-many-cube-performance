@@ -19,7 +19,7 @@ public class NormalInstanceCube : MonoBehaviour
             {
                 for (int z = start; z < end; z++)
                 {
-                    var cube = Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity, this.transform);
+                    var cube = Instantiate(prefab, new Vector3(x, y, z), Quaternion.identity);
                     cube.transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
                     cubes.Add(cube);
                 }
