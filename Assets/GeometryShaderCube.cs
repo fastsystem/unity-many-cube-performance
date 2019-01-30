@@ -19,8 +19,9 @@ public class GeometryShaderCube : MonoBehaviour
         material = new Material(shader);
 
         // 22 x 22 x 22 = 10,648 cube
-        int start = -11;
-        int end = 22 + start;
+        int start = Gui.Start;
+        int end = Gui.End;
+
         points = new List<Vector3>();
         for (int x = start; x < end; x++)
         {
@@ -35,6 +36,9 @@ public class GeometryShaderCube : MonoBehaviour
 
         buffer = new ComputeBuffer(points.Count, Marshal.SizeOf(typeof(Vector3)), ComputeBufferType.Default);
         buffer.SetData(points);
+        material.SetFloat("rotate_x", this.transform.rotation.x);
+        material.SetFloat("rotate_y", this.transform.rotation.y);
+        material.SetFloat("rotate_z", this.transform.rotation.z);
         material.SetBuffer("points", buffer);
     }
 

@@ -12,8 +12,8 @@ public class CreateMeshuCube : MonoBehaviour
         var v1 = 0.4f;
 
         // 22 x 22 x 22 = 10,648 cube
-        int start = -11;
-        int end = 22 + start;
+        int start = Gui.Start;
+        int end = Gui.End;
 
         List<Vector3> vertices = new List<Vector3>();
         List<int> triangles = new List<int>();
