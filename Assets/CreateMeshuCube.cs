@@ -3,15 +3,10 @@ using System.Collections.Generic;
 
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
-public class MeshGenerator : MonoBehaviour
+public class CreateMeshuCube : MonoBehaviour
 {
 
-    void Start()
-    {
-        CreateCube();
-    }
-
-    private void CreateCube()
+    void OnEnable()
     {
         var v0 = -0.4f;
         var v1 = 0.4f;
@@ -83,5 +78,11 @@ public class MeshGenerator : MonoBehaviour
         mesh.triangles = triangles.ToArray();
         // mesh.Optimize();
         mesh.RecalculateNormals();
+    }
+
+    void OnDisable()
+    {
+        Mesh mesh = GetComponent<MeshFilter>().mesh;
+        mesh.Clear();
     }
 }
