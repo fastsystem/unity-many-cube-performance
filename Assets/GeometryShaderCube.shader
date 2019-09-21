@@ -4,6 +4,7 @@
 
         Pass {
 			Tags {"LightMode" = "ForwardBase"}
+			LOD 100
 
 	        CGPROGRAM
 			uniform StructuredBuffer<float3>	points;
@@ -13,7 +14,7 @@
 			float rotate_z;
 
 	        // シェーダーモデルは5.0を指定
-	        #pragma target 5.0
+	        // #pragma target 5.0
 	        
 	        // シェーダー関数を設定 
 	        #pragma vertex vert
